@@ -1,16 +1,15 @@
 import './App.css';
-import User from './User'
 function App() {
-
-  function Apple()
+  let data="anil sidhu";
+  function apple()
   {
-    return(<div>Apple component</div>)
+  data="peter";
+    alert(data);
   }
   return (
     <div className="App">
-     <h1>Hello World !</h1>
-     <User />
-     <Apple />
+     <h1>{data}</h1>
+     <button onClick={apple}>Click Me</button>
     </div>
   );
 }
