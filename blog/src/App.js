@@ -1,13 +1,17 @@
+import React,{useState} from 'react'
 import './App.css';
 import Student from './Student'
 function App() {
-
+  const [name,setName]=useState("Anil")
+  function apple()
+  {
+    alert("hello")
+  }
   return (
     <div className="App">
      <h1>Props in React :)</h1>
-     <Student name={"anil"}  email="anil@test.com" other={{address:"delhi",mobile:"000"}}/>
-     <Student name={"anil"}  email="anil@test.com" other={{address:"delhi",mobile:"000"}}/>
-     <Student name={"anil"}  email="anil@test.com" other={{address:"delhi",mobile:"000"}}/>
+     <Student name={name}/>
+     <button onClick={()=>{setName("Sidhu")}} >Update Name</button>
     </div>
   );
 }
