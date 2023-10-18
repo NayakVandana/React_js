@@ -1,10 +1,15 @@
 import './App.css';
-import Login from './Login'
+import User from './User'
+import Student from './Student'
 function App() {
-  const data = true;
+ 
+  function getData() {
+    alert("Hello from app component")
+  }
   return (
     <div className="App">
-     <Login />
+     <User  data={getData} />
+     <Student data={getData} />
     </div>
   );
 }
