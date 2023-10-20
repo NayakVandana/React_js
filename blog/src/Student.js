@@ -1,12 +1,14 @@
-function Student(props) {
-    
-    return(
-        <div>
-            <h1>Student Component</h1>
-            <button onClick={props.data}>Call Function</button>
-        </div>
-    )
+import React from 'react'
+class Student extends React.Component{
+
+    componentWillUnmount()
+    {
+        alert("componentWillUnmount is called")
+    }
+    render()
+    {
+        return<h1>Student Component</h1>
+    }
 }
 
-
-export default Student;
+export default Student
