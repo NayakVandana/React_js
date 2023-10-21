@@ -1,17 +1,25 @@
-import React from 'react'
 import './App.css';
-import User from './User'
-function App() {
-  function getName(name)
+import React from 'react'
+import Counter from './Counter'
+class  App extends React.Component {
+  constructor()
   {
-    alert(name)
+    super();
+    this.state={
+      count:1
+    }
   }
+ render()
+ {
   return (
     <div className="App">
-      <h1>Lifting State Up</h1>
-      <User getData={getName} />
+     <Counter count={this.state.count} />
+      <button 
+      onClick={()=>{this.setState({count:this.state.count+1})}}
+      >Update Count</button>
     </div>
   );
+ }
 }
 
 export default App;
