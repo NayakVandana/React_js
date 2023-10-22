@@ -1,24 +1,31 @@
 import './App.css';
-import React, { useState } from 'react'
-function App() {
-  const [count, setData] = useState(1)
-  const [item, setItem] = useState(20)
+import React,{createRef} from 'react'
+class App extends React.Component {
+  constructor()
+  {
+    super();
+    this.inputRef=createRef();
+  }
+  componentDidMount()
+  {
+    // console.warn(this.inputRef.current.value="1000")
+  }
+  getVal()
+  {
+    console.warn(this.inputRef.current.value)
+    this.inputRef.current.style.color="red"
+    this.inputRef.current.style.backgroundColor="black"
 
-  const newApple=React.useMemo(//use Memo appleTime badhij event par call thai jase ane stop karava particular event par use karava use thai 
-    function appleTime() {
-      console.warn("Hello")
-      return 100 * count;
-    }
-  ,[item])
-  return (
-    <div className="App">
-      <h1>Hooks in React {count}</h1>
-      {newApple}
-      <button onClick={() => setData(count + 1)}>Update State</button>
-      <button onClick={() => setItem(item * 10)}>Update State</button>
-
-    </div>
-  );
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Ref in React </h1>
+        <input type="text" ref={this.inputRef}  />
+        <button onClick={()=>this.getVal()}>Check Ref</button>
+      </div>
+    );
+  }
 }
 
 export default App;
