@@ -1,6 +1,6 @@
 //uncontroller ma ref and document thi handle thai 6e same class and function component ma aaj concept
 
-
+//je pan component ma ref use thase a unctroll component kevase
 import './App.css';
 import React, { useRef } from 'react'
 function App() {
