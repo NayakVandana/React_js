@@ -1,4 +1,4 @@
-//controll component state thi controll thai 6e
+//controll component state thi controll thai 6e function and class ma same 6e
 
 import './App.css';
 import React,{useState} from 'react'
