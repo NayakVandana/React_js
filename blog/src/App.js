@@ -1,3 +1,5 @@
+
+//forwardRef function ma je rite use thai a rite class ma pan use thai
 import './App.css';
 import React ,{useRef} from 'react'
 import User from './User'
