@@ -5,6 +5,8 @@ function About() {
         <h1>About Page</h1>
         <p>This is my Home Page</p>
         <Link to="/"> Go to home</Link>
+        <li><Link to="/user/anil"> Anil</Link></li>
+        <li><Link to="/user/peter"> Peter</Link></li>
       </div>
     )
   }
