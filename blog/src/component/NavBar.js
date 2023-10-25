@@ -6,7 +6,7 @@ function NavBar() {
             <li><NavLink className="nav-bar-link" style={({isActive})=>{return{color:isActive?"skyblue":""}}}  to="/"> Home</NavLink></li>
             <li><NavLink className="nav-bar-link" style={({isActive})=>{return{color:isActive?"skyblue":""}}} to="/about"> About</NavLink></li>
             <li><NavLink className="nav-bar-link" style={({isActive})=>{return{color:isActive?"skyblue":""}}} to="/contact"> Contact</NavLink></li>
-            
+            <li><NavLink className="nav-bar-link" style={({isActive})=>{return{color:isActive?"skyblue":""}}} to="/filter"> Filter</NavLink></li>
         </ul>
       </div>
     )
