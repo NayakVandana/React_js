@@ -11,6 +11,8 @@ import Contact from "./component/Contact";
 import Company from "./component/Company";
 import Channel from "./component/Channel";
 import Other from "./component/Other";
+import Login from "./component/Login";
+import Protected from "./component/Protected";
 // import Page404 from "./component/Page404";
 
 function App() {
@@ -19,8 +21,10 @@ function App() {
       <BrowserRouter>
       <NavBar/>
         <Routes>         
-          <Route path="/" element={<Home />} />              
-          <Route path="/about" element={<About />}/>
+          {/* <Route path="/" element={<Home />} />    */}
+          <Route path="/" element={<Protected Component={Home}/>} />   
+          <Route path="/login" element={<Login/>} />               
+          <Route path="/about" element={<Protected Component={About}/>}/>
           {/* <Route path="/*" element={<Page404 />}/> */}
           <Route path="/user/:name" element={<User />}/>
           <Route path="/*" element={<Navigate to="/" />}/>
