@@ -1,11 +1,13 @@
-import React,{forwardRef} from 'react'
-function User(props,ref)
+import React from 'react';
+import {withRouter} from 'react-router-dom'
+function User(props)
 {
+    console.warn(props)
     return(
-        <div>
-            <input ref={ref} type="text" />
-        </div>
+    <div><h1>User No {props.match.params.id}</h1>
+    <h1>User Name {props.match.params.name}</h1></div>
+
     )
 }
 
-export default forwardRef(User);
+export default withRouter(User);
