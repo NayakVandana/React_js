@@ -1,21 +1,40 @@
-import './App.css';
-import React from 'react'
+import React from "react";
+import { CommonContext } from "./component/CommonContext";
+import Main from "./component/Main";
+import UpdateButton from "./component/UpdateButton";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
+class App extends React.Component {
+  constructor() {
+    super();
+    this.updateColor = (color) => {
+      this.setState({
+        color: color,
+      });
+    };
+    this.state = {
+      color: "green",
+      updateColor: this.updateColor,
+    };
+  }
+  render() {
+    return (
+      <CommonContext.Provider value={this.state}>
+        <Header />
+        <CommonContext.Consumer>
+          {({ color }) => (
+            <h1 style={{ backgroundColor: color }}>
+              Complete and easy example for Context API
+            </h1>
+          )}
+        </CommonContext.Consumer>
 
-function App() {
-  const [data,setData]=React.useState({name:"anil",age:27})
-  return (
-    <div className="App">
-      <h1>State object with hook</h1>
-      <input type='text' placeholder='enter name' value={data.name}
-       onChange={(e)=>{setData({...data,name:e.target.value})}}/>
-        <input type='text' placeholder='enter age' value={data.age}
-       onChange={(e)=>{setData({...data,age:e.target.value})}}/>
-       <h1>{data.name}</h1>
-       <h1>{data.age}</h1>
-    </div>
-  );
+        <Main />
+        <UpdateButton />
+        <Footer />
+      </CommonContext.Provider>
+    );
+  }
 }
-
-
 
 export default App;
